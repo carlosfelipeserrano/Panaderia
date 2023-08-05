@@ -16,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -988,6 +990,50 @@ public void agregarpanes() {
         return idCliente;
     }
 
+    public DefaultTableModel mostrarClientes() {
+        ConexionBD db = new ConexionBD();
+        String[] nombresColumnas = {"Rut", "Nombre", "Apellidos", "Dirección", "Correo Electrónico", "Teléfono", "Fecha", "Pan Comprado", "Kilogramos Comprados", "Precio Total"};
+        DefaultTableModel modelo = new DefaultTableModel(null, nombresColumnas);
+        String sql = "SELECT cliente.rut, cliente.nombre, cliente.apellidos, cliente.direccion, cliente.correo, cliente.telefono, pedido.fecha, panes.tipo, pedido.kilos_totales, pedido.precio_total "
+                + "FROM cliente INNER JOIN pedido ON cliente.idCliente = pedido.idCliente INNER JOIN panes ON pedido.idPanes = panes.id";
+
+        try (Connection conexion = db.getConexion(); PreparedStatement st = conexion.prepareStatement(sql); ResultSet rs = st.executeQuery()) {
+
+            while (rs.next()) {
+                String[] registros = new String[nombresColumnas.length];
+                for (int i = 0; i < nombresColumnas.length; i++) {
+                    registros[i] = rs.getString(i + 1);
+                }
+                modelo.addRow(registros);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al conectar");
+        }
+
+        return modelo;
+    }
+
+    public Map<String, Double> obtenerPreciosPanes() {
+        Map<String, Double> preciosPanes = new HashMap<>();
+        ConexionBD db = new ConexionBD();
+        String sql = "SELECT tipo, precio FROM panes";
+        Connection conexion = db.getConexion();
+        try {
+            PreparedStatement pstmt = conexion.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                String tipo = rs.getString("tipo");
+                double precio = rs.getDouble("precio");
+                preciosPanes.put(tipo, precio);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return preciosPanes;
+    }
+
     public boolean actualizarCliente(Cliente cl) {
         ConexionBD db = new ConexionBD();
 
@@ -1002,18 +1048,18 @@ public void agregarpanes() {
             pstmt.setString(4, cl.getCorreo());
             pstmt.setString(5, cl.getDireccion());
             pstmt.setString(6, cl.getTelefono());
-            pstmt.setInt(7, "habilitado".equals(cl.getEstado()) ? 1 : 2); 
-            pstmt.setInt(8, cl.getIdCliente()); 
+            pstmt.setInt(7, "habilitado".equals(cl.getEstado()) ? 1 : 2);
+            pstmt.setInt(8, cl.getIdCliente());
 
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(null, "Los datos se actualizaron correctamente", "AVISO", JOptionPane.INFORMATION_MESSAGE);
-                pstmt.close(); 
-                conexion.close(); 
+                pstmt.close();
+                conexion.close();
                 return true;
             }
-            pstmt.close(); 
-            conexion.close(); 
+            pstmt.close();
+            conexion.close();
 
         } catch (SQLException e) {
             e.printStackTrace();

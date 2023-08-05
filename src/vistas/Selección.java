@@ -938,7 +938,7 @@ public class Selección extends javax.swing.JFrame {
 
     private void loginBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtn3ActionPerformed
         // TODO add your handling code here:
-        final double PRECIO_POR_KG = 100;
+        final double PRECIO_POR_KG = 1;
 
 // Obtener los valores de los campos de texto
         double n1 = Double.parseDouble(txtpan1.getText());

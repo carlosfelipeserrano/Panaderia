@@ -1696,6 +1696,11 @@ public class MenuDueño extends javax.swing.JFrame {
         jTextPrecio.setForeground(new java.awt.Color(0, 0, 0));
         jTextPrecio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextPrecio.setBorder(null);
+        jTextPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextPrecioActionPerformed(evt);
+            }
+        });
         jTextPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextPrecioKeyTyped(evt);
@@ -2634,7 +2639,7 @@ public class MenuDueño extends javax.swing.JFrame {
             return;
         }
         // Añade un punto decimal después del primer dígito
-        if (text.length() == 1) {
+        if (text.length() == 0) {
             jTextPrecio.setText(text + "." + c);
             evt.consume(); // ignora el último carácter tecleado
         }
@@ -2892,6 +2897,10 @@ public class MenuDueño extends javax.swing.JFrame {
             return;
         }
     }//GEN-LAST:event_txttelefono1KeyTyped
+
+    private void jTextPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPrecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextPrecioActionPerformed
 
     /**
      * @param args the command line arguments

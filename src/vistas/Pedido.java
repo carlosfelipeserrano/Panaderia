@@ -49,7 +49,7 @@ public class Pedido extends javax.swing.JFrame {
     public void mostrarAdministradores() {
         Consulta logica = new Consulta();
 
-        DefaultTableModel modelo = logica.mostrarPedido();
+        DefaultTableModel modelo = logica.mostrarClientes();
 
         jTablePedidos.setModel(modelo);
 
@@ -70,6 +70,7 @@ public class Pedido extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         loginBtn1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -87,8 +88,6 @@ public class Pedido extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        loginBtn2 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         loginBtn4 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
@@ -107,30 +106,36 @@ public class Pedido extends javax.swing.JFrame {
         fecha1.setBackground(new java.awt.Color(0, 0, 0));
         fecha1.setForeground(new java.awt.Color(255, 255, 255));
         fecha1.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jPanel1.add(fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 160, -1));
+        jPanel1.add(fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 160, -1));
 
         fecha2.setBackground(new java.awt.Color(0, 0, 0));
         fecha2.setForeground(new java.awt.Color(255, 255, 255));
         fecha2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jPanel1.add(fecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 160, -1));
+        jPanel1.add(fecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 160, -1));
 
         jLabel8.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Pedidos Solicitados ");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 390, 50));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logopequeño.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 40, 130, 90));
 
         jLabel9.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Desde");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 80, 50));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 80, 50));
 
         jLabel10.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Hasta");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 80, 50));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 80, 50));
+
+        jLabel11.setFont(new java.awt.Font("Agency FB", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Pedidos Solicitados ");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, 390, 50));
 
         jPanel6.setBackground(new java.awt.Color(226, 173, 97));
         jPanel6.setPreferredSize(new java.awt.Dimension(120, 40));
@@ -165,16 +170,16 @@ public class Pedido extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loginBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(loginBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, -1));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, 50));
 
         jPanel3.setBackground(new java.awt.Color(235, 112, 19));
 
         jButton2.setBackground(new java.awt.Color(235, 112, 19));
         jButton2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Buscar");
         jButton2.setToolTipText("");
         jButton2.setBorder(null);
@@ -207,7 +212,7 @@ public class Pedido extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, -1, 40));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, -1, 40));
 
         header1.setBackground(new java.awt.Color(0, 0, 0));
         header1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -355,8 +360,8 @@ public class Pedido extends javax.swing.JFrame {
                 txtrutKeyTyped(evt);
             }
         });
-        jPanel1.add(txtrut, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 160, 30));
-        jPanel1.add(jsusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 160, 20));
+        jPanel1.add(txtrut, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 160, 30));
+        jPanel1.add(jsusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, 160, 20));
 
         jPanel9.setBackground(new java.awt.Color(255, 153, 102));
 
@@ -395,13 +400,13 @@ public class Pedido extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
-        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(235, 112, 19));
 
         jButton3.setBackground(new java.awt.Color(235, 112, 19));
         jButton3.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Exportar Tabla");
         jButton3.setToolTipText("");
         jButton3.setBorder(null);
@@ -434,44 +439,7 @@ public class Pedido extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
-
-        jPanel5.setBackground(new java.awt.Color(226, 173, 97));
-        jPanel5.setPreferredSize(new java.awt.Dimension(120, 40));
-
-        loginBtn2.setBackground(new java.awt.Color(226, 173, 97));
-        loginBtn2.setFont(new java.awt.Font("Agency FB", 1, 18)); // NOI18N
-        loginBtn2.setForeground(new java.awt.Color(0, 0, 0));
-        loginBtn2.setText("Limpiar datos");
-        loginBtn2.setBorder(null);
-        loginBtn2.setContentAreaFilled(false);
-        loginBtn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        loginBtn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginBtn2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginBtn2MouseExited(evt);
-            }
-        });
-        loginBtn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginBtn2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loginBtn2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loginBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 220, 120, 50));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         jPanel8.setBackground(new java.awt.Color(226, 173, 97));
         jPanel8.setPreferredSize(new java.awt.Dimension(120, 40));
@@ -509,7 +477,7 @@ public class Pedido extends javax.swing.JFrame {
             .addComponent(loginBtn4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 120, 50));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 120, 50));
 
         jPanel7.setBackground(new java.awt.Color(226, 173, 97));
         jPanel7.setPreferredSize(new java.awt.Dimension(120, 40));
@@ -544,10 +512,10 @@ public class Pedido extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loginBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addComponent(loginBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 40, 110, -1));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 250, 110, 50));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -698,19 +666,6 @@ public class Pedido extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void loginBtn2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtn2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginBtn2MouseEntered
-
-    private void loginBtn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtn2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginBtn2MouseExited
-
-    private void loginBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtn2ActionPerformed
-        // TODO add your handling code here:
-        Limpiar();
-    }//GEN-LAST:event_loginBtn2ActionPerformed
-
     private void loginBtn1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtn1MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_loginBtn1MouseEntered
@@ -826,12 +781,12 @@ public class Pedido extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -840,7 +795,6 @@ public class Pedido extends javax.swing.JFrame {
     private javax.swing.JTable jTablePedidos;
     private javax.swing.JSeparator jsusuario;
     private javax.swing.JButton loginBtn1;
-    private javax.swing.JButton loginBtn2;
     private javax.swing.JButton loginBtn3;
     private javax.swing.JButton loginBtn4;
     private javax.swing.JTextField txtrut;
